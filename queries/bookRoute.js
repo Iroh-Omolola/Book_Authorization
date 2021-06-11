@@ -2,7 +2,7 @@
 import {Book} from '../model/bookSchema.js';
 
 
-// add a new student to database
+// add a new book to database
 export const createBooks = async(req,res,next)=>{
    try{
     Book.create(req.body).then(function(book){
@@ -12,7 +12,7 @@ export const createBooks = async(req,res,next)=>{
        console.error(err)
    }
 };
-// get a list of students from the database
+// get a list of book from the database
 export const findBooks = async(req,res,next)=>{
    try{
     await Book.find({}).then(function(book){
@@ -24,7 +24,7 @@ export const findBooks = async(req,res,next)=>{
 };
 
 
-// update a student in the database
+// update a book in the database
 export const updateBooks = async(req,res,next)=>{
     try{
         await Book.findOneAndUpdate({_id: req.params.id},req.body).then(function(book){
@@ -37,7 +37,7 @@ export const updateBooks = async(req,res,next)=>{
     }
 };
 
-// delete a student in the database
+// delete a book in the database
 export const deleteBooks = async(req,res,next)=>{
    try{
     await Book.findOneAndDelete({_id: req.params.id}).then(function(book){

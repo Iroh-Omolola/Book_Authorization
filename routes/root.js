@@ -9,9 +9,6 @@ router.get('/', verify, (req, res) => {
       message: 'hello world',
     });
   });
-// add a new student to database
-
-
 
   
 //   //create
